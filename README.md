@@ -74,3 +74,4 @@ Checking connectivity... done.
 * [Как работать с тестами и основы pytest](https://pyneng.readthedocs.io/ru/latest/book/additional_info/pytest.html)
 
 * Installed Midnight Commander, YO-HO-HO :-)
+* Managed to run VM at home notebook! Disabled PROXY by 'unset http_proxy' command.

@@ -30,5 +30,6 @@ london_co = {
 }
 
 parameter = input('Enter  parameter name ' + str(list(london_co[device_name].keys())) + ' : ')
+#output = print(london_co[device_name]
 #print('\n' + '-' * 30)
-print(london_co[device_name][parameter])
+print(london_co[device_name].get(parameter, 'Такого параметра нет!'))

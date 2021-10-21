@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 device_name = input('Enter device name (r1/r2/sw1): ').lower()
-#parameter = input('Enter  parameter name (location/vendor/model/ios/ip/vlans(sw1)/routing(sw1)): ')
 
 london_co = {
 "r1": {
@@ -30,6 +29,5 @@ london_co = {
 }
 
 parameter = input('Enter  parameter name ' + str(list(london_co[device_name].keys())) + ' : ').lower()
-#output = print(london_co[device_name]
-#print('\n' + '-' * 30)
+
 print(london_co[device_name].get(parameter, 'Такого параметра нет!'))

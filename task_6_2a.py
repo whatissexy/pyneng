@@ -1,22 +1,30 @@
 #!/usr/bin/env python3
 
-ip_addr = input('Введите IP адрес: ').split('.')
+while True:
+    ip_address = input("Введите адрес: ")
+    octets = ip_address.split(".")
+    correct_ip = True
 
-for octet in ip_addr:
-    if int(octet) and int(octet) in range(0, 255):
-        print('PASS ' + octet)
-    else: print('FAIL ' + octet)
+    if len(octets) == 4:
+        for octet in octets:
+            if not (octet.isdigit() and int(octet) in range(256)):
+                correct_ip = False
+                break
+    else:
+        correct_ip = False
+    if correct_ip:
+        break
+    print("Неправильный IP-адрес")
 
+first_octet = int(octets[0])
 
-
-'''octet = int(ip_addr.split('.')[0])
-if octet in range(1,223):
-    print('unicast')
-elif octet in range(224,239):
-    print('multicast')
-elif ip_addr == '255.255.255.255':
-    print('local broadcast')
-elif ip_addr == '0.0.0.0':
-    print('unassigned')
+if 1 <= first_octet <= 223:
+    print("unicast")
+elif 224 <= first_octet <= 239:
+    print("multicast")
+elif ip_address == "0.0.0.0":
+    print("unassigned")
+elif ip_address == "255.255.255.255":
+    print("local broadcast")
 else:
-    print('unused')'''
+    print("unused")

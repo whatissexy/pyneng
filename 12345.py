@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 
-'''try:
-    2/0
-except (ZeroDivisionError):
-    print('Нельзя делить на ноль!')
+output = "\n{:25} {}" * 5
 
-#raise ValueError("При выполнении команды возникла ошибка")'''
+with open("ospf.txt", "r") as f:
+    for line in f:
+        route = line.replace(",", " ").replace("[", "").replace("]", "")
+        route = route.split()
 
-trunk = {"0/1": ["add", "10", "20"], "0/2": ["only", "11", "30"], "0/4": ["del", "17"]}
-
-for item in trunk.values():
-    #print(','.join(item))
-    print(item.pop(0))
-
-#print(','.join(trunk.values()))
+        print(output.format(
+                "Prefix", route[1],
+                "AD/Metric", route[2],
+                "Next-Hop", route[4],
+                "Last update", route[5],
+                "Outbound Interface", route[6],
+        ))

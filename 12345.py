@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-output = "\n{:25} {}" * 5
+output = "{:25} {}\n" * 5
 
 with open("ospf.txt", "r") as f:
     for line in f:

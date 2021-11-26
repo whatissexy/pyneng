@@ -8,7 +8,7 @@ while True:
         vlan_num = int(input('Введите номер vlan: '))
     except ValueError:
         print('Введен некорректный номер vlan, повторите попытку!')
-        time.sleep(2)
+        time.sleep(1)
         continue
     else:
         break
@@ -20,7 +20,7 @@ with open('CAM_table.txt') as f:
     for line in f:
         if len(line.rstrip()):
             res = line.split()
-            if len(res) and res[0].isdigit() and res[1].split('.')[0].isalnum() and len(res[1].split('.')) == 3 and int(res[0]) == vlan_num:
+            if res[0].isdigit() and res[1].split('.')[0].isalnum() and len(res[1].split('.')) == 3 and int(res[0]) == vlan_num:
                 temp_list.append([int(res[0]), res[1], res[3]])
     for vlan, mac, intf in sorted(temp_list):
         #print(f'{vlan:<10} {mac:<20} {intf:<10}')

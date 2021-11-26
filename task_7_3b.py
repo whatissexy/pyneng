@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-#while True:
+
 import time
 import datetime
 
@@ -7,7 +7,7 @@ while True:
     try:
         vlan_num = int(input('Введите номер vlan: '))
     except ValueError:
-        print('Введен некорректный номер vlan')
+        print('Введен некорректный номер vlan, повторите попытку!')
         time.sleep(2)
         continue
     else:
